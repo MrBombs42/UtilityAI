@@ -16,20 +16,20 @@ class GYMSIMULATOR_API UUtilityAction : public UObject
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Utility AI")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="🎬 Action")
 	FString ActionName;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Utility AI")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="🎬 Action")
 	TArray<UConsideration*> Considerations;
 
-	UFUNCTION(BlueprintCallable, Category="Utility AI")
+	UFUNCTION(BlueprintCallable, Category="🎬 Action")
 	float CalculateFinalScore(AActor* Owner, UObject* Context) const;
 
-	UFUNCTION(BlueprintNativeEvent, Category="Utility AI")
+	UFUNCTION(BlueprintNativeEvent, Category="🎬 Action")
 	void Execute(AActor* Owner, UObject* Context);
 	virtual void Execute_Implementation(AActor* Owner, UObject* Context);
 
-	UFUNCTION(BlueprintNativeEvent, Category="Utility AI")
+	UFUNCTION(BlueprintNativeEvent, Category="🎬 Action")
 	void Stop(AActor* Owner);
 	virtual void Stop_Implementation(AActor* Owner);
 

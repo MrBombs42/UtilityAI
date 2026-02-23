@@ -18,7 +18,7 @@ class GYMSIMULATOR_API URestAction : public UUtilityAction
 public:
 	URestAction();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Rest")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "🎬 Action")
 	float EnergyRecoveryRate;
 
 protected:

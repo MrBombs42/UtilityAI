@@ -24,6 +24,9 @@ protected:
 	float CalculateScore(AActor* Owner, UObject* Context) const;
 	virtual float CalculateScore_Implementation(AActor* Owner, UObject* Context) const;
 
-	UPROPERTY(EditAnywhere, Category = "Utility AI")
+	UPROPERTY(EditAnywhere, Category = "🧠 Consideration", meta = (EditCondition = "bUseResponseCurve"))
 	UCurveFloat* ResponseCurve;
+
+	UPROPERTY(EditAnywhere, Category = "🧠 Consideration")
+	bool bUseResponseCurve;
 };

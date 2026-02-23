@@ -64,6 +64,7 @@ UUtilityAction* UUtilityBrainComponent::ChooseBestAction()
 		return nullptr;
 	}
 
+	// podia estar cacheado
 	AActor* Owner = GetOwner();
 	if (Owner == nullptr)
 	{
