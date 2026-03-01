@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Consideration.h"
+#include "Base/ConsiderationBase.h"
 #include "GenericPropertyConsideration.generated.h"
 
 UENUM(BlueprintType)
@@ -20,7 +20,7 @@ enum class EComparisonOperator : uint8
 
 
 UCLASS(Blueprintable, EditInlineNew, DefaultToInstanced)
-class GYMSIMULATOR_API UGenericPropertyConsideration : public UConsideration
+class GYMSIMULATOR_API UGenericPropertyConsideration : public UConsiderationBase
 {
 	GENERATED_BODY()
 

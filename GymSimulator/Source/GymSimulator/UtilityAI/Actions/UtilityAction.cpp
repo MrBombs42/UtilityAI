@@ -3,7 +3,6 @@
 
 #include "UtilityAI/Actions/UtilityAction.h"
 
-#include "Consideration.h"
 
 float UUtilityAction::CalculateFinalScore(AActor* Owner, UObject* Context) const
 {
@@ -14,7 +13,7 @@ float UUtilityAction::CalculateFinalScore(AActor* Owner, UObject* Context) const
 
 	float FinalScore = 1.0f;
 
-	for (UConsideration* Consideration : Considerations)
+	for (UConsiderationBase* Consideration : Considerations)
 	{
 		if (Consideration)
 		{

@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Consideration.h"
+#include "Base/CurveConsideration.h"
 #include "EnergyConsideration.generated.h"
 
 /**
  *
  */
 UCLASS()
-class GYMSIMULATOR_API UEnergyConsideration : public UConsideration
+class GYMSIMULATOR_API UEnergyConsideration : public UCurveConsideration
 {
 	GENERATED_BODY()
 

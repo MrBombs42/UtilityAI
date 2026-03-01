@@ -3,8 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Consideration.h"
 #include "UObject/NoExportTypes.h"
+#include "UtilityAI/Considerations/Base/ConsiderationBase.h"
 #include "UtilityAction.generated.h"
 
 /**
@@ -20,7 +20,7 @@ public:
 	FString ActionName;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="🎬 Action")
-	TArray<UConsideration*> Considerations;
+	TArray<UConsiderationBase*> Considerations;
 
 	UFUNCTION(BlueprintCallable, Category="🎬 Action")
 	float CalculateFinalScore(AActor* Owner, UObject* Context) const;
