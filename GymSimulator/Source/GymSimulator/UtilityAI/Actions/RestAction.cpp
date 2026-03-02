@@ -32,16 +32,8 @@ void URestAction::Execute_Implementation(AActor* Owner, UObject* Context)
 
 	World->GetTimerManager().SetTimer(
 		RecoveryTimerHandle,
-		[this, GymNPC]()
-		{
-			if (GymNPC && IsValid(GymNPC))
-			{
-				GymNPC->ModifyEnergy(EnergyRecoveryRate);
-				UE_LOG(LogTemp, Warning, TEXT("%s recovering energy: %.2f"),
-					   *GymNPC->GetName(),
-					   GymNPC->GetEnergyLevel());
-			}
-		},
+		this,
+		&URestAction::RecoverEnergy,
 		1.0f,
 		true
 	);
@@ -68,24 +60,14 @@ void URestAction::Stop_Implementation(AActor* Owner)
 
 void URestAction::RecoverEnergy()
 {
-	UE_LOG(LogTemp, Error, TEXT("RecoverEnergy called!"));
-
 	if (!CurrentOwner.IsValid())
 	{
 		UE_LOG(LogTemp, Error, TEXT("CurrentOwner is invalid!"));
 		return;
 	}
 
-	AGymNPC* NPC = Cast<AGymNPC>(CurrentOwner.Get());
-	if (!NPC)
-	{
-		NPC->ModifyEnergy(EnergyRecoveryRate);
-		UE_LOG(LogTemp, Warning, TEXT("%s recovering energy: %.2f"),
-               *NPC->GetName(),
-               NPC->GetEnergyLevel());
-    }
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Cast to GymNPC failed!"));
-	}
+	CurrentOwner->ModifyEnergy(EnergyRecoveryRate);
+	UE_LOG(LogTemp, Warning, TEXT("%s recovering energy: %.2f"),
+		*CurrentOwner->GetName(),
+		CurrentOwner->GetEnergyLevel());
 }

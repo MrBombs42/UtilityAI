@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "NPC/GymNPC.h"
 #include "UtilityAI/Actions/UtilityAction.h"
 #include "RestAction.generated.h"
 
@@ -28,7 +29,7 @@ protected:
 private:
 	FTimerHandle RecoveryTimerHandle;
 
-	TWeakObjectPtr<AActor> CurrentOwner;
+	TWeakObjectPtr<AGymNPC> CurrentOwner;
 
 	UFUNCTION()
 	void RecoverEnergy();
